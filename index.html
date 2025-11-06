@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jay Bhole Weather AI</title>
+  <link rel="preconnect" href="https://api.open-meteo.com">
+  <link rel="preconnect" href="https://geocoding-api.open-meteo.com">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="icon" aria-hidden="true">?????</div>
+      <h1><strong>Jay Bhole Weather AI</strong></h1>
+    </header>
+
+    <section class="controls">
+      <label for="cityInput" class="sr-only">City name</label>
+      <input id="cityInput" type="text" placeholder="Enter city name (e.g., Delhi)" autocomplete="off" inputmode="text" />
+      <button id="getWeatherBtn" type="button">Get Weather</button>
+    </section>
+
+    <section id="status" class="status" aria-live="polite"></section>
+
+    <section id="results" class="results hidden" aria-live="polite">
+      <div class="location" id="locationName"></div>
+      <div class="metrics">
+        <div class="metric">
+          <div class="label">Temperature</div>
+          <div class="value"><span id="temperature">?</span> <span class="unit">?C</span></div>
+        </div>
+        <div class="metric">
+          <div class="label">Humidity</div>
+          <div class="value"><span id="humidity">?</span> <span class="unit">%</span></div>
+        </div>
+        <div class="metric">
+          <div class="label">Rain Chance (??)</div>
+          <div class="value"><span id="rainChance">?</span> <span class="unit">%</span></div>
+        </div>
+      </div>
+      <div class="advice" id="adviceHi"></div>
+      <div class="updated" id="updatedAt"></div>
+    </section>
+  </main>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
